@@ -17,6 +17,11 @@ namespace DiffingApi.Services
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
+        public Task<List<Base64Image>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Base64Image> GetAsync(int id)
         {
             return await _context.Images

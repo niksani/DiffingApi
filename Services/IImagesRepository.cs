@@ -8,6 +8,8 @@ namespace DiffingApi.Services
 {
     public interface IImagesRepository
     {
+        Task<List<Base64Image>> GetAll();
+
         Task<Base64Image> GetAsync(int id);
 
         void Update(Base64Image imageToUpdate);

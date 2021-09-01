@@ -105,25 +105,17 @@ namespace DiffingApi.V1.Controllers
 
                         //if there were no differences diffs will be null
                         result.DiffResultType = result.Diffs == null ? DiffResultType.Equals.ToString() : DiffResultType.ContentDoNotMatch.ToString();
-
-                        //serializing response to lower case and removing empty data
-                        var message = JsonSerializer.Serialize(result, new JsonSerializerOptions()
-                        {
-                            IgnoreNullValues = true,
-                            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                        });
-                        return Ok(message);
+                        
+                        //return Ok(message);
+                        return Ok(result);
                     }
                     else
                     {
                         //left and right content are not same size so we guess they are not the similar
                         result.DiffResultType = DiffResultType.SizeDoNotMatch.ToString();
-                        var message = JsonSerializer.Serialize(result, new JsonSerializerOptions()
-                        {
-                            IgnoreNullValues = true,
-                            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                        });
-                        return Ok(message);
+
+                        //return Ok(message);
+                        return Ok(result);
                     }
                 }
             }
