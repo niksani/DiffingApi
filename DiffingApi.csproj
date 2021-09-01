@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Postman Test Export\" />
     <Folder Include="v2\Controllers\" />
     <Folder Include="v2\Models\" />
   </ItemGroup>
